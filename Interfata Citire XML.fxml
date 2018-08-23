@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1046.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.ReadXMLFile">
+  <children>
+    <ScrollPane prefHeight="655.0" prefWidth="939.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="163.0">
+      <content>
+        <GridPane fx:id="grid" alignment="TOP_LEFT" gridLinesVisible="false" prefHeight="-1.0" prefWidth="932.0">
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="598.0" minWidth="0.0" prefWidth="447.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="0.0" prefWidth="421.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints maxHeight="-1.0" minHeight="-1.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="372.0" minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </content>
+    </ScrollPane>
+    <Button fx:id="start" mnemonicParsing="false" onAction="#citireXML" prefWidth="174.0" text="Start citire date din raportul XML" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="124.0" />
+    <Label fx:id="mesajOptiune" text="Bifeaza pentru validarea automata a datelor folosind testul" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="88.0" />
+    <RadioButton fx:id="optiune" layoutY="88.0" mnemonicParsing="false" text="Valideaza" AnchorPane.rightAnchor="36.0" />
+    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="54.0" prefWidth="939.0" text="Citire si autovalidare rapoarte ANAF" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="14.0">
+      <font>
+        <Font name="Arial Black" size="20.0" />
+      </font>
+    </Label>
+  </children>
+</AnchorPane>
