@@ -1,28 +1,18 @@
 package main;
 
-import java.awt.*;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.print.PrintException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -36,26 +26,11 @@ public class ReadXMLFile {
     public RadioButton optiune;
     public Button start;
     public Label mesajOptiune;
-    private File fisierSemnat;
     private File fisierXML;
     private Boolean Validare = false;
 
-    public boolean setFisierXML(File fisierXML) {
-        this.fisierSemnat = fisierXML;
-        System.out.println(identifyFileTypeUsingFilesProbeContentType(fisierSemnat));
-        if(identifyFileTypeUsingFilesProbeContentType(fisierSemnat).equals("application/x-pkcs7-certificates")){
-
-            System.out.println("Trenuie extras XML-ul");
-            return true;
-        }
-        else if(identifyFileTypeUsingFilesProbeContentType(fisierSemnat).equals("text/xml")){
-            fisierXML = fisierSemnat;
-            return true;
-        }
-        else {
-            showMessageDialog(null, "Fisier incompatibil!");
-            return false;
-        }
+    public void setFisierXML(File fisierXML) {
+        this.fisierXML = fisierXML;
     }
 
 

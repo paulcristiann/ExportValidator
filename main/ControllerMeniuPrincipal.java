@@ -6,13 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 
@@ -31,12 +28,12 @@ public class ControllerMeniuPrincipal {
         FileChooser fileChooser = new FileChooser();
         File f = fileChooser.showOpenDialog(null);
         if (f != null) {
-            if(identifyFileTypeUsingFilesProbeContentType(fisierSemnat).equals("application/x-pkcs7-certificates")){
+            if(identifyFileTypeUsingFilesProbeContentType(f).equals("application/x-pkcs7-certificates")){
 
                 System.out.println("Trenuie extras XML-ul");
                 fisierSemnat = f;
             }
-            else if(identifyFileTypeUsingFilesProbeContentType(fisierSemnat).equals("text/xml")){
+            else if(identifyFileTypeUsingFilesProbeContentType(f).equals("text/xml")){
                 fisierXML = f;
                 //trebuie sa suprimam butonul de verificare certificat
             }
@@ -73,7 +70,7 @@ public class ControllerMeniuPrincipal {
         obiectReadXML.setFisierXML(fisierXML);
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Interfata Citire XML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("main/Interfata Citire XML.fxml"));
         } catch (IOException e) {
                 e.printStackTrace();
         }
