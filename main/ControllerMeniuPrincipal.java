@@ -17,60 +17,40 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 public class ControllerMeniuPrincipal {
 
-    public File fisierXML;
-    public File fisierSemnat;
+    static public File fisierXML;
+    static public File fisierSemnat;
     public Button butonCitireXML;
     public Label labelFisier;
+    public Button butonValidareSemnatura;
+    public Label statusFisier;
 
     @FXML
     private void incarcaFisier(){
 
         FileChooser fileChooser = new FileChooser();
         File f = fileChooser.showOpenDialog(null);
-        if (f != null) {
-            if(identifyFileTypeUsingFilesProbeContentType(f).equals("application/x-pkcs7-certificates")){
 
-                System.out.println("Trenuie extras XML-ul");
-                fisierSemnat = f;
-            }
-            else if(identifyFileTypeUsingFilesProbeContentType(f).equals("text/xml")){
-                fisierXML = f;
-                //trebuie sa suprimam butonul de verificare certificat
-            }
-            else {
-                showMessageDialog(null, "Fisier incompatibil!");
-            }
-            showMessageDialog(null, "Fisier incarcat!");
-        }
-        else {
-            System.out.println("Alegere anulata");
-        }
+        if(f.getName().contains(".xml")){
 
-    }
+            fisierXML = f;
+            butonValidareSemnatura.setVisible(false);
+            statusFisier.setText("Fisierul incarcat este in format XML. Functia de validare a semnaturii nu se poate folosi!");
 
-    public String identifyFileTypeUsingFilesProbeContentType(final File fileName)
-    {
-        String fileType = "Undetermined";
-        final File file = fileName;
-        try
-        {
-            fileType = Files.probeContentType(file.toPath());
+        }else {
+            fisierSemnat = f;
+            butonValidareSemnatura.setVisible(true);
         }
-        catch (IOException ioException)
-        {
-            System.out.println("Nu putem determina tipul fisierului");
-        }
-        return fileType;
+        labelFisier.setText(f.getName());
+
     }
 
     @FXML
     private void openCitireXML(){
 
         ReadXMLFile obiectReadXML = new ReadXMLFile();
-        obiectReadXML.setFisierXML(fisierXML);
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("main/Interfata Citire XML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Interfata Citire XML.fxml"));
         } catch (IOException e) {
                 e.printStackTrace();
         }

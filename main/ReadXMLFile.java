@@ -1,6 +1,7 @@
 package main;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,11 +9,16 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -26,17 +32,33 @@ public class ReadXMLFile {
     public RadioButton optiune;
     public Button start;
     public Label mesajOptiune;
-    private File fisierXML;
+    public Label labelValidareXSD;
+    public AnchorPane pane;
     private Boolean Validare = false;
 
-    public void setFisierXML(File fisierXML) {
-        this.fisierXML = fisierXML;
+    @FXML
+    private void goBack(){
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("Meniu Principal.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage curenta = (Stage) grid.getScene().getWindow();
+        curenta.setTitle("Test");
+        curenta.setScene(new Scene(root, 900, 700));
     }
-
-
 
     @FXML
     private void citireXML(){
+
+        labelValidareXSD.setText("Aici urmeaza validare XSD");
+
+        if(ControllerMeniuPrincipal.fisierXML == null)
+        {
+            mesajOptiune.setText("Nu a fost incarcat niciun fisier!");
+            return;
+        }
 
         start.setVisible(false);
         optiune.setVisible(false);
@@ -51,7 +73,7 @@ public class ReadXMLFile {
             DocumentBuilder dBuilder = DocumentBuilderFactory.newInstance()
                     .newDocumentBuilder();
 
-            Document doc = dBuilder.parse(fisierXML);
+            Document doc = dBuilder.parse(ControllerMeniuPrincipal.fisierXML);
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
@@ -64,6 +86,10 @@ public class ReadXMLFile {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+    }
+
+    private void validareXSD(){
 
     }
 

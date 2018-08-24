@@ -7,9 +7,9 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1046.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.ReadXMLFile">
+<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.ReadXMLFile">
   <children>
-    <ScrollPane prefHeight="655.0" prefWidth="939.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="163.0">
+    <ScrollPane layoutY="202.0" prefHeight="616.0" prefWidth="986.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="202.0">
       <content>
         <GridPane fx:id="grid" alignment="TOP_LEFT" gridLinesVisible="false" prefHeight="-1.0" prefWidth="932.0">
           <columnConstraints>
@@ -31,5 +31,7 @@
         <Font name="Arial Black" size="20.0" />
       </font>
     </Label>
+      <Button layoutX="28.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="120.0" text="Mergi inapoi" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="28.0" />
+      <Label fx:id="labelValidareXSD" alignment="CENTER" layoutX="34.0" layoutY="168.0" prefHeight="17.0" prefWidth="980.0" text="Label" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
   </children>
 </AnchorPane>
