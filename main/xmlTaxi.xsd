@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="mfp:anaf:dgti:a4202:declaratie:v1" targetNamespace="mfp:anaf:dgti:a4202:declaratie:v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.02" xml:lang="ro">
+    <xs:element name="msj" type="MsjType"/>
+    <xs:complexType name="MsjType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="bonT" type="BonTType" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="rT" type="RTType"/>
+                    <xs:element name="mE" type="METype" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="idM" type="Str28" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="BonTType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="cote" type="CoteType" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="idB" type="Str32" use="required"/>
+                <xs:attribute name="nrC" type="IntPoz3SType" use="required"/>
+                <xs:attribute name="totB" type="DblPoz20_2SType" use="required"/>
+                <xs:attribute name="totTva" type="DblPoz20_2SType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CoteType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:attribute name="cota" type="IntPoz2SType" use="required"/>
+                <xs:attribute name="tva" type="DblPoz20_2SType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="RTType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="coteZ" type="CoteZType" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="av" type="AvType" minOccurs="0" maxOccurs="unbounded"/>
+                    <xs:element name="ut" type="UtType" maxOccurs="unbounded"/>
+                    <xs:element name="set" type="SetType" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="idR" type="Str28" use="required"/>
+                <xs:attribute name="nrAv" type="IntPoz3SType" use="required"/>
+                <xs:attribute name="nrB" type="IntPoz10SType" use="required"/>
+                <xs:attribute name="valB" type="DblPoz20_2SType" use="required"/>
+                <xs:attribute name="totTva" type="DblPoz20_2SType" use="required"/>
+                <xs:attribute name="nrBC" type="IntPoz10SType" use="required"/>
+                <xs:attribute name="valBC" type="DblPoz20_2SType" use="required"/>
+                <xs:attribute name="totTVA_cui" type="DblPoz20_2SType" use="required"/>
+                <xs:attribute name="totD" type="DblPoz10_2SType" use="required"/>
+                <xs:attribute name="totDC" type="DblPoz10_2SType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CoteZType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:attribute name="cota" type="IntPoz2SType" use="required"/>
+                <xs:attribute name="tva" type="DblPoz20_2SType" use="required"/>
+                <xs:attribute name="tva_cui" type="DblPoz20_2SType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="AvType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:attribute name="ora_avarie" type="TimeStampSType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="UtType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="curse" type="CurseType" minOccurs="0" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="idU" type="Str5" use="required"/>
+                <xs:attribute name="totDU" type="DblPoz10_2SType" use="required"/>
+                <xs:attribute name="totDCU" type="DblPoz10_2SType" use="required"/>
+                <xs:attribute name="totalBU" type="DblPoz20_2SType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="CurseType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:attribute name="nr_cursa" type="Str20" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="SetType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:attribute name="nrSet" type="Int_tipSetSType" use="required"/>
+                <xs:attribute name="tarif" type="DblPoz3_2SType" use="required"/>
+                <xs:attribute name="totSet" type="DblPoz20_2SType" use="required"/>
+                <xs:attribute name="totDS" type="DblPoz10_2SType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="METype">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="ev" type="EvType" maxOccurs="unbounded"/>
+                </xs:sequence>
+                <xs:attribute name="nrB" type="IntPoz10SType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="EvType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:attribute name="dataI" type="TimeStampSType" use="required"/>
+                <xs:attribute name="dataF" type="TimeStampSType" use="required"/>
+                <xs:attribute name="tipE" type="Int_tipEvenimentSType" use="required"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:simpleType name="Str28">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="28"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Str32">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IntPoz3SType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DblPoz20_2SType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0."/>
+            <xs:pattern value="\d{0,20}(\.\d{0,2})?"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IntPoz2SType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="99"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="IntPoz10SType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="9999999999"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DblPoz10_2SType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0."/>
+            <xs:pattern value="\d{0,10}(\.\d{0,2})?"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Str5">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Str20">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Int_tipSetSType">
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DblPoz3_2SType">
+        <xs:restriction base="xs:double">
+            <xs:minInclusive value="0."/>
+            <xs:pattern value="\d{0,3}(\.\d{0,2})?"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Int_tipEvenimentSType">
+        <xs:restriction base="xs:integer">
+            <xs:enumeration value="1"/>
+            <xs:enumeration value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="TimeStampSType">
+        <xs:restriction base="xs:token">
+            <xs:pattern value="([012][0-9]|3[01])\.(0[1-9]|1[012])\.\d{4}\s([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

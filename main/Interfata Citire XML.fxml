@@ -31,7 +31,7 @@
         <Font name="Arial Black" size="20.0" />
       </font>
     </Label>
-      <Button layoutX="28.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="120.0" text="Mergi inapoi" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="28.0" />
-      <Label fx:id="labelValidareXSD" alignment="CENTER" layoutX="34.0" layoutY="168.0" prefHeight="17.0" prefWidth="980.0" text="Label" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+      <Button layoutX="28.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="120.0" styleClass="#dark-blue" stylesheets="@style.css" text="Mergi inapoi" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="28.0" />
+      <Label fx:id="labelValidareXSD" alignment="CENTER" layoutX="34.0" layoutY="168.0" prefHeight="17.0" prefWidth="980.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="168.0" />
   </children>
 </AnchorPane>
