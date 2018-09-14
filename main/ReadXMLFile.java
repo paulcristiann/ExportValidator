@@ -115,7 +115,7 @@ public class ReadXMLFile {
         try {
             SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
-            File f = new File("/Users/paul-cristianvasile/Desktop/ExportValidator/main/xmlUzual.xsd");
+            File f = new File("XSD/xmlUzual.xsd");
 
             Schema schema = factory.newSchema(f);
 
@@ -137,7 +137,7 @@ public class ReadXMLFile {
             try {
                 SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
-                File f = new File("/Users/paul-cristianvasile/Desktop/ExportValidator/main/xmlPR.xsd");
+                File f = new File("XSD/xmlPR.xsd");
 
                 Schema schema = factory.newSchema(f);
 
@@ -159,7 +159,7 @@ public class ReadXMLFile {
                 try {
                     SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
-                    File f = new File("/Users/paul-cristianvasile/Desktop/ExportValidator/main/xmlSV.xsd");
+                    File f = new File("XSD/xmlSV.xsd");
 
                     Schema schema = factory.newSchema(f);
 
@@ -181,7 +181,7 @@ public class ReadXMLFile {
                     try {
                         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
 
-                        File f = new File("/Users/paul-cristianvasile/Desktop/ExportValidator/main/xmlTaxi.xsd");
+                        File f = new File("XSD/xmlTaxi.xsd");
 
                         Schema schema = factory.newSchema(f);
 

@@ -35,9 +35,9 @@ public class ControllerMeniuPrincipal {
             butonValidareSemnatura.setVisible(false);
             statusFisier.setText("Fisierul incarcat este in format XML. Functia de validare a semnaturii nu se poate folosi!");
 
-        }else if(f.getName().contains(".p7b") || f.getName().contains(".p7s") || f.getName().contains(".p7m")){
+        }else if(f.getName().contains(".p7b") || f.getName().contains(".p7s") || f.getName().contains(".p7m") || f.getName().contains(".P7B")){
             fisierSemnat = f;
-            //extragerea payloadului din mesajul semnat
+            butonCitireXML.setVisible(false);
             try {
                 FileInputStream in = new FileInputStream(f);
             } catch (IOException e) {
@@ -74,7 +74,25 @@ public class ControllerMeniuPrincipal {
 
     @FXML
     private void openValidareSemnatura(){
-        //showMessageDialog(null,"Test");
-        System.out.println("Modul de validare semnatura");
+
+        if(ControllerMeniuPrincipal.fisierSemnat == null){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Oroare!!!");
+            alert.setHeaderText("Nu a fost incarcat un fisier!");
+            alert.setContentText("Pentru validarea semnaturii incarcati un fisier semnat!");
+            alert.showAndWait();
+            return;
+        }
+
+        Parent root = null;
+        try {
+            root = FXMLLoader.load(getClass().getResource("CertValid.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Stage curenta = (Stage) butonCitireXML.getScene().getWindow();
+        curenta.setTitle("Validare Semnatura");
+        curenta.setScene(new Scene(root, 900, 750));
+
     }
 }

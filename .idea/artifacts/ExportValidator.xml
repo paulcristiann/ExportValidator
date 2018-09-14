@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="ExportValidator">
+    <output-path>$PROJECT_DIR$/out/artifacts/ExportValidator</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="main.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Validator Export AMEF" />
+        <option name="vendor" value="Paul Cristian VASILE" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="ExportValidator.jar">
+        <element id="module-output" name="ExportValidator" />
+      </element>
+      <element id="library" level="project" name="bcmail-jdk15on-159" />
+    </root>
+  </artifact>
+</component>
