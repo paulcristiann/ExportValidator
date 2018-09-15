@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
 Class-Path: bcmail-jdk15on-159.kar
-Main-Class: main.Main
+Main-Class: main.Main.Main
 

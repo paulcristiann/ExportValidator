@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="762.0" prefWidth="916.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.CertValidController">
+<AnchorPane prefHeight="762.0" prefWidth="916.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="main.Main.CertValidController">
   <children>
     <Button fx:id="cauta" mnemonicParsing="false" onAction="#open" text="Incarca certificat" AnchorPane.leftAnchor="156.0" AnchorPane.topAnchor="15.0" />
     <AnchorPane fx:id="structura" layoutY="124.0" prefHeight="638.0" prefWidth="914.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0">

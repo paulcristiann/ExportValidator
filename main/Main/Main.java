@@ -1,5 +1,4 @@
-package main;
-
+package main.Main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,12 +10,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        main.ControllerMeniuPrincipal meniu = new main.ControllerMeniuPrincipal();
-
-        Parent root = FXMLLoader.load(getClass().getResource("Meniu Principal.fxml"));
-        primaryStage.setTitle("Validare rapoarte ANAF");
+        Parent root = FXMLLoader.load(getClass().getResource("MeniuPrincipal.fxml"));
+        primaryStage.setTitle("Validare rapoarte XML");
         primaryStage.setScene(new Scene(root, 900, 700));
         primaryStage.show();
+
     }
 
 

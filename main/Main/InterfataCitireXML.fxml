@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.ReadXMLFile">
+<AnchorPane id="AnchorPane" fx:id="pane" maxHeight="-1.0" maxWidth="-1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="848.0" prefWidth="1046.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Main.ReadXMLFile">
   <children>
     <ScrollPane layoutY="202.0" prefHeight="616.0" prefWidth="986.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="202.0">
       <content>
@@ -31,7 +34,7 @@
         <Font name="Arial Black" size="20.0" />
       </font>
     </Label>
-      <Button layoutX="28.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="120.0" styleClass="#dark-blue" stylesheets="@style.css" text="Mergi inapoi" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="28.0" />
+      <Button layoutX="28.0" layoutY="28.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="120.0" text="Mergi inapoi" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="28.0" />
       <Label fx:id="labelValidareXSD" alignment="CENTER" layoutX="34.0" layoutY="168.0" prefHeight="17.0" prefWidth="980.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="168.0" />
   </children>
 </AnchorPane>

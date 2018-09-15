@@ -1,4 +1,4 @@
-package main;
+package main.Main;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,8 +12,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import org.bouncycastle.cert.X509CertificateHolder;
-import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
 import org.bouncycastle.cms.*;
 import org.bouncycastle.cms.jcajce.JcaSimpleSignerInfoVerifierBuilder;
 import org.bouncycastle.util.Store;
@@ -225,7 +223,7 @@ public class CertValidController implements Initializable {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Meniu Principal.fxml"));
+            root = FXMLLoader.load(getClass().getResource("MeniuPrincipal.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }

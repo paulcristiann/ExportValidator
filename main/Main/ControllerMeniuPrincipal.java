@@ -1,4 +1,4 @@
-package main;
+package main.Main;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -63,7 +63,7 @@ public class ControllerMeniuPrincipal {
 
         Parent root = null;
         try {
-            root = FXMLLoader.load(getClass().getResource("Interfata Citire XML.fxml"));
+            root = FXMLLoader.load(getClass().getResource("InterfataCitireXML.fxml"));
         } catch (IOException e) {
                 e.printStackTrace();
         }
