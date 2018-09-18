@@ -63,7 +63,7 @@ public class ReadXMLFile {
     @FXML
     private void citireXML() throws ParseException {
 
-        //validareXSD();
+        validareXSD();
 
         try{
 
@@ -336,6 +336,11 @@ public class ReadXMLFile {
             }
             if(ok == false){
                 labelValidareXSD.setText("Atentie! Eroare la validarea fisierului cu XSD-ul ANAF!");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("A survenit o eroare");
+                alert.setHeaderText("A fost detectata o eroare");
+                alert.setContentText("Fisierul nu a putut fi validat contra unui XSD");
+                alert.showAndWait();
             }
     }
 
